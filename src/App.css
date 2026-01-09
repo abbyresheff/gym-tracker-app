@@ -1,0 +1,64 @@
+.app {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  background-color: var(--color-background);
+  transition: margin-left 0.3s ease;
+  overflow-y: auto;
+  /* Smooth scrolling for better UX */
+  scroll-behavior: smooth;
+  /* Prevent horizontal overflow on mobile */
+  overflow-x: hidden;
+}
+
+/* When sidebar is collapsed */
+.sidebar.collapsed ~ .main-content {
+  margin-left: 64px;
+}
+
+/* Empty state styling */
+.progress-view,
+.goals-view {
+  padding: var(--spacing-8);
+  text-align: center;
+}
+
+.progress-view h2,
+.goals-view h2 {
+  margin-bottom: var(--spacing-4);
+  color: var(--color-text-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 64px;
+    /* Add padding for mobile to prevent edge-to-edge content */
+    padding-bottom: var(--spacing-6);
+  }
+
+  /* Improve touch targets */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Accessibility: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

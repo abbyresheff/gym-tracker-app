@@ -1,0 +1,62 @@
+.progression-chart {
+  width: 100%;
+  padding: var(--spacing-4);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.chart-title {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-4);
+}
+
+.no-data {
+  text-align: center;
+  padding: var(--spacing-8);
+  color: var(--color-text-secondary);
+}
+
+.custom-tooltip {
+  background-color: white;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3);
+  box-shadow: var(--shadow-lg);
+}
+
+.tooltip-date {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-2);
+  font-size: 0.875rem;
+}
+
+.tooltip-weight {
+  color: var(--color-accent);
+  margin: var(--spacing-1) 0;
+  font-size: 0.875rem;
+}
+
+.tooltip-weight strong {
+  font-weight: var(--font-weight-bold);
+}
+
+.tooltip-volume,
+.tooltip-sets {
+  color: var(--color-text-secondary);
+  margin: var(--spacing-1) 0;
+  font-size: 0.75rem;
+}
+
+/* Recharts overrides */
+.recharts-default-tooltip {
+  background-color: white !important;
+  border: none !important;
+}
+
+.recharts-legend-wrapper {
+  font-size: 0.875rem !important;
+}

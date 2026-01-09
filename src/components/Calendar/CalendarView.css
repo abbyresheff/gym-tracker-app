@@ -1,0 +1,121 @@
+.calendar-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.nav-controls {
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+.control-button {
+  padding: var(--spacing-2) var(--spacing-4);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.control-button:hover {
+  background-color: var(--color-surface);
+  border-color: var(--color-accent);
+}
+
+.today-button {
+  background-color: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}
+
+.today-button:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.selected-date-info {
+  padding: var(--spacing-6);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+.add-workout-button {
+  padding: var(--spacing-3) var(--spacing-6);
+  background-color: var(--color-accent);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.add-workout-button:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.view-switcher {
+  display: flex;
+  gap: var(--spacing-2);
+  background-color: var(--color-surface);
+  padding: var(--spacing-1);
+  border-radius: var(--radius-md);
+}
+
+.view-button {
+  padding: var(--spacing-2) var(--spacing-4);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-button:hover {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+.view-button.active {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .calendar-controls {
+    justify-content: center;
+  }
+
+  .nav-controls {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .view-switcher {
+    order: 1;
+  }
+}

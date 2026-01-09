@@ -1,0 +1,185 @@
+.exercise-card {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.exercise-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.exercise-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4);
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  gap: var(--spacing-4);
+}
+
+.exercise-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  flex: 1;
+  min-width: 0;
+}
+
+.expand-button {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: var(--spacing-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  border-radius: var(--radius-sm);
+}
+
+.expand-button:hover {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.exercise-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  flex-wrap: wrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.exercise-title h3 {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.muscle-badge {
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-semibold);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.exercise-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.stat-item {
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.delete-exercise-button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delete-exercise-button:hover {
+  background-color: var(--color-regression);
+  border-color: var(--color-regression);
+  color: white;
+}
+
+.exercise-card-content {
+  padding: var(--spacing-4);
+}
+
+.no-sets {
+  text-align: center;
+  padding: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  align-items: center;
+}
+
+.sets-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+}
+
+.add-set-button {
+  width: 100%;
+  padding: var(--spacing-3);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-set-button.primary {
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+}
+
+.add-set-button.primary:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.add-set-button.secondary {
+  background-color: transparent;
+  border: 2px dashed var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.add-set-button.secondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: rgba(37, 99, 235, 0.02);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .exercise-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .exercise-info {
+    width: 100%;
+  }
+
+  .exercise-stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .exercise-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

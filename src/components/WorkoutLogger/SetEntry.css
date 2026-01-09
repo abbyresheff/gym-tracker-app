@@ -1,0 +1,233 @@
+.set-entry {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-3);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.set-entry:hover {
+  background-color: var(--color-surface);
+  border-color: var(--color-accent);
+}
+
+.set-entry.completed {
+  opacity: 0.7;
+  background-color: rgba(16, 185, 129, 0.05);
+  border-color: var(--color-pr);
+}
+
+.set-number {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  min-width: 60px;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.pr-badge {
+  background-color: var(--color-pr);
+  color: white;
+  font-size: 0.625rem;
+  font-weight: var(--font-weight-bold);
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  animation: prPulse 2s ease-in-out infinite;
+}
+
+@keyframes prPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0);
+  }
+}
+
+.matched-badge {
+  color: var(--color-matched);
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.set-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.control-label {
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-1);
+}
+
+.stepper-button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stepper-button:hover:not(:disabled) {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.stepper-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.stepper-input {
+  width: 70px;
+  text-align: center;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  padding: var(--spacing-1);
+  font-variant-numeric: tabular-nums;
+}
+
+.stepper-input:focus {
+  outline: none;
+  background-color: var(--color-background);
+  border-radius: var(--radius-sm);
+}
+
+/* Remove spinner arrows from number input */
+.stepper-input::-webkit-inner-spin-button,
+.stepper-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.stepper-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.multiply-symbol {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-bold);
+}
+
+.set-actions {
+  display: flex;
+  gap: var(--spacing-2);
+  align-items: center;
+}
+
+.complete-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.complete-button:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: white;
+  transform: scale(1.1);
+}
+
+.complete-button.completed {
+  background-color: var(--color-pr);
+  border-color: var(--color-pr);
+  color: white;
+}
+
+.delete-set-button {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.delete-set-button:hover {
+  background-color: var(--color-regression);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .set-entry {
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+  }
+
+  .set-number {
+    width: 100%;
+  }
+
+  .set-controls {
+    width: 100%;
+  }
+
+  .multiply-symbol {
+    display: none;
+  }
+
+  .control-group {
+    flex: 1;
+    min-width: 0;
+  }
+}
