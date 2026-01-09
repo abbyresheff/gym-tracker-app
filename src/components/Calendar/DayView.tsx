@@ -18,7 +18,7 @@ const DayView: React.FC<DayViewProps> = ({ selectedDate, onBack }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [showExerciseSelector, setShowExerciseSelector] = useState(false);
   const [showTemplateManager, setShowTemplateManager] = useState(false);
-  const [saveTimeout, setSaveTimeout] = useState<number | null>(null);
+  const [saveTimeout, setSaveTimeout] = useState<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     loadSession();
